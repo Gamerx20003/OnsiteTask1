@@ -15,7 +15,7 @@ do
   phone1=$(cut -d',' -f 2 <<<$( grep "$phone" file3.txt | head -1))
   year=$(cut -d',' -f 3 <<<$( grep "$phone" file3.txt | head -1))
 
-echo "$name $empid $phone $salary $mail $year" >> merged.txt
+echo "$name,$empid,$phone,$salary,$mail,$year" >> merged.txt
 done < file1.txt
 
     
