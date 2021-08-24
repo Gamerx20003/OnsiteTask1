@@ -6,15 +6,12 @@ colname="$1"
 old="$2"
 new="$3"
 
-
-
-IFS=","
-
 if [ "$colname" == "name" ]
   then 
     while read line 
     do
-     if [[ $line =~ .*"$old".* ]]
+     fin=$(cut -d',' -f 1 <<<$line)
+     if [ "$fin" = "$old" ]
         then
           echo ${line/$old/$new} 
         else
@@ -27,7 +24,8 @@ elif [ "$colname" == "employeeid" ]
   then
     while read line 
     do
-     if [[ $line =~ .*"$old".* ]]
+    fin=$(cut -d',' -f 2 <<<$line)
+     if [ "$fin" = "$old" ]
         then
           echo ${line/$old/$new} 
         else
@@ -41,7 +39,8 @@ elif [ "$colname" == "phone" ]
   then
     while read line 
     do
-      if [[ $line =~ .*"$old".* ]]
+      fin=$(cut -d',' -f 3 <<<$line)
+      if [ "$fin" = "$old" ]
         then
           echo ${line/$old/$new} 
         else
@@ -54,7 +53,8 @@ elif [ "$colname" == "salary" ]
   then
     while read line 
     do
-     if [[ $line =~ .*"$old".* ]]
+     fin=$(cut -d',' -f 4 <<<$line)
+     if [ "$fin" = "$old" ]
         then
           echo ${line/$old/$new} 
         else
@@ -67,7 +67,8 @@ elif [ "$colname" == "mail" ]
   then  
     while read line 
     do
-     if [[ $line =~ .*"$old".* ]]
+     fin=$(cut -d',' -f 5 <<<$line) 
+     if [ "$fin" = "$old" ]
         then
           echo ${line/$old/$new} 
         else
@@ -80,7 +81,8 @@ elif [ "$colname" == "year" ]
   then
     while read line 
     do
-     if [[ $line =~ .*"$old".* ]]
+     fin=$(cut -d',' -f 6 <<<$line)
+     if [ "$fin" = "$old" ]
         then
           echo ${line/$old/$new} 
         else
